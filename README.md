@@ -83,6 +83,16 @@ examples/
 2. Follow the README inside that scenario.
 3. For `esm/`, `commonjs/`, and `vite` projects, run `npm install` and follow the `npm run ...` instructions documented in the scenario README.
 
+## Framework notes
+
+CountriesDB works with all modern frameworks (React, Vue, Svelte, Angular, Next.js, Nuxt) because it initializes from plain HTML.  
+Just render `<select>` elements with the correct classes and import the widget:
+
+```js
+import('@countriesdb/widget')
+```
+
+
 ## About this repository
 
 Every example here uses the same widget build that powers the live documentation on **[countriesdb.com](https://countriesdb.com)**, ensuring that code on GitHub matches what developers see on the official site.  

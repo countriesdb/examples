@@ -52,6 +52,3 @@ Demonstrates how to customize country and subdivision names on-the-fly using Jav
 - Name filters override all other name sources (romanization, local variant, language preferences)
 - When name filters are used, the widget automatically re-sorts options using Unicode-aware sorting
 - Filter functions must be defined in the global scope before the widget script loads
-
-
-

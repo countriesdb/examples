@@ -67,6 +67,3 @@ Demonstrates how to customize country and subdivision names on-the-fly using Jav
 - Name filters override all other name sources (romanization, local variant, language preferences)
 - When name filters are used, the widget automatically re-sorts options using Unicode-aware sorting
 - You can also pass filter functions directly to `window.CountriesDBConfig` instead of defining them in `window` first
-
-
-
