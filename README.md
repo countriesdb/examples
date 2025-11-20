@@ -1,14 +1,14 @@
 # CountriesDB Examples
 
-Welcome to the CountriesDB reference examples. If you’re integrating the CountriesDB widget into your product, these projects show exactly how to wire it up using the four most common toolchains. Every scenario (basic widget, `countriesWidget:update` events, dynamic filtering, delayed auto-init, geolocation behaviour, etc.) is implemented the same way across stacks, so you can pick the one that mirrors your production environment.
+Welcome to the CountriesDB reference examples. If you’re integrating the CountriesDB widget into your product, these projects show exactly how to wire it up using common toolchains. Every scenario is implemented the same way across stacks, so you can pick the one that mirrors your production environment.
 
 These examples are meant to be **copy-paste friendly**, production-safe, and fully aligned with the official documentation on **[countriesdb.com](https://countriesdb.com)**. Whether you’re building a checkout form, KYC address flow, onboarding wizard, or admin panel, the code here demonstrates the recommended integration patterns.
 
 > 🔐 **API key required:** every example expects a CountriesDB public key. Create an account at [countriesdb.com](https://countriesdb.com) to generate your key (test keys are available with limited functionality). Replace `YOUR_PUBLIC_KEY` in each snippet before running the demos.
 
-## Why these examples exist
+## What's in this repository
 
-CountriesDB ships a **country and state/province dropdown widget** backed by verified ISO 3166-1 and ISO 3166-2 data, multilingual naming, and geolocation support. Customers ask for complete, runnable blueprints that match the code in production (checkout forms, address flows, onboarding, admin tooling). This repository delivers those blueprints—HTML snippets for quick embeds, plus bundled projects for Rollup/ESM, legacy CommonJS, and modern Vite stacks.
+CountriesDB provides a country and state/province dropdown widget with ISO 3166-1 and ISO 3166-2 data, multilingual support, and geolocation. This repository contains working examples you can copy and run immediately - no guesswork, no outdated snippets. Each example is available in HTML (for quick testing), ESM (for modern bundlers), CommonJS (for legacy setups), and Vite (for fast development).
 
 ## Maintained stacks
 
@@ -21,18 +21,47 @@ CountriesDB ships a **country and state/province dropdown widget** backed by ver
 
 Each stack mirrors the same set of example directories (e.g. `basic`, `update-select`, `name-filter`, `auto-init-delayed`) so the official docs can link to identical behaviour across toolchains.
 
-## What these examples cover
+## Available examples
 
-- ISO-compliant country and subdivision dropdowns  
-- Multilingual name loading (`defaultLanguage`, `forcedLanguage`)  
-- Preselect logic (`data-preselected`)  
-- Dynamic subdivision loading using `data-country`  
-- Custom filtering rules (`countryNameFilter`, `subdivisionNameFilter`)  
-- Parent/child subdivision navigation  
-- Integrating the widget into forms, checkout flows, and CRM admin tools  
-- Using the widget with bundlers (ESM, CJS, Vite)  
-- Auto-initialization and manual initialization patterns  
-- Handling widget events, such as `countriesWidget:update`
+**Getting started:**
+- `basic` - Simple country and subdivision dropdowns
+- `preselection` - Preselecting country and subdivision values
+- `standalone-subdivision` - Subdivision select without a country select
+- `subdivisions` - Basic subdivision loading
+
+**Multi-select:**
+- `multi-select-basic` - Multi-select countries
+- `multi-select-preselected` - Multi-select with preselected values
+- `multi-select-single-country` - Multi-select with a single country code
+
+**Events and updates:**
+- `update-select` - Listen to `countriesWidget:update` events (single select)
+- `update-multiselect` - Listen to `countriesWidget:update` events (multi-select)
+
+**Customization:**
+- `name-filter` - Custom name filtering for countries and subdivisions
+- `custom-default-value` - Custom default option value
+- `custom-label` - Custom default option label
+
+**Language and naming:**
+- `default-language` - Set default language for names
+- `force-language` - Force a specific language
+- `iso-country-names` - Use ISO country names
+- `local-variant` - Prefer local name variants
+- `romanization-preference` - Set romanization system preference
+
+**Subdivision behavior:**
+- `allow-parent-selection` - Allow selecting parent subdivisions
+- `follow-related` - Follow related subdivisions
+- `follow-upward` - Navigate upward to parent subdivisions
+- `prefer-official` - Prefer official subdivisions (global setting)
+- `prefer-official-per-select` - Prefer official subdivisions (per-select)
+- `hide-subdivision-type` - Hide subdivision type names
+- `nested-prefix` - Custom prefixes for nested subdivision levels
+
+**Initialization:**
+- `auto-init-delayed` - Manual widget initialization
+- `disable-geolocation` - Disable automatic geolocation
 
 ## Layout
 
@@ -58,4 +87,4 @@ examples/
 
 Every example here uses the same widget build that powers the live documentation on **[countriesdb.com](https://countriesdb.com)**, ensuring that code on GitHub matches what developers see on the official site.  
 
-These examples are maintained by **[NAYEE LLC](https://nayee.net)** — the publisher of CountriesDB — and are updated in lockstep with each widget release to maintain consistency across documentation, npm, and integration guides.
+These examples are maintained by **[NAYEE LLC](https://nayee.net)** (the publisher of CountriesDB) and are updated in lockstep with each widget release to maintain consistency across documentation, npm, and integration guides.
