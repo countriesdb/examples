@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountriesDB Widget - Basic Multi-select (CommonJS)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+        select[multiple] {
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CountriesDB Widget - Basic Multi-select (CommonJS)</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="country">Countries (select multiple):</label>
+            <select
+                id="country"
+                class="country-selection"
+                name="country"
+                multiple
+                data-name="country_multi">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="subdivision">US States (select multiple):</label>
+            <select
+                id="subdivision"
+                class="subdivision-selection"
+                name="subdivision"
+                multiple
+                data-country-code="US">
+            </select>
+        </div>
+    </form>
+
+    <script>
+        window.CountriesDBConfig = {
+            publicKey: 'YOUR_PUBLIC_KEY'
+        };
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>
+

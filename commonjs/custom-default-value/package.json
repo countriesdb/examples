@@ -1,0 +1,17 @@
+{
+  "name": "countriesdb-widget-commonjs-custom-default-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "browserify src/widget.js -o public/bundle.js",
+    "dev": "npm run build && npx serve public"
+  },
+  "dependencies": {
+    "@countriesdb/widget": "latest"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "serve": "^14.2.3"
+  }
+}
+

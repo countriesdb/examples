@@ -1,0 +1,2 @@
+require('@countriesdb/widget');
+

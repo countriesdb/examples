@@ -1,0 +1,18 @@
+{
+  "name": "countriesdb-widget-vite-auto-init-delayed-example",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "@countriesdb/widget": "latest"
+  }
+}
+

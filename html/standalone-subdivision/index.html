@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountriesDB Widget - Standalone Subdivision Example</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CountriesDB Widget - Standalone Subdivision</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="us-state">US State:</label>
+            <select
+                id="us-state"
+                class="subdivision-selection"
+                name="us_state"
+                data-country-code="US"
+                data-label="Select US state">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ca-province">Canadian Province:</label>
+            <select
+                id="ca-province"
+                class="subdivision-selection"
+                name="ca_province"
+                data-country-code="CA"
+                data-label="Select Canadian province">
+            </select>
+        </div>
+    </form>
+
+    <script src="https://unpkg.com/@countriesdb/widget@latest/dist/index.js?public_key=YOUR_PUBLIC_KEY"></script>
+</body>
+</html>
+
