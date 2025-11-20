@@ -1,0 +1,19 @@
+{
+  "name": "countriesdb-widget-esm-disable-geolocation-example",
+  "version": "1.0.0",
+  "description": "ESM disable geolocation example for @countriesdb/widget",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "npm run build && npx serve public"
+  },
+  "dependencies": {
+    "@countriesdb/widget": "latest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "rollup": "^4.0.0"
+  }
+}
+
+

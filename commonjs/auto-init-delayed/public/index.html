@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountriesDB Widget - Delayed Auto Init - CommonJS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        button:hover:not(:disabled) {
+            background-color: #2c5aa0;
+        }
+        button:disabled {
+            background-color: #48bb78;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .info {
+            background: #f3f4ff;
+            border: 1px solid #dcdff7;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .info code {
+            background: #e8eaf6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delayed Auto Init - CommonJS</h1>
+    <div class="info">
+        This example disables automatic initialization by setting <code>autoInit: false</code> in <code>window.CountriesDBConfig</code>. The widget will not load until you manually call <code>window.CountriesWidgetLoad()</code>. This is useful when you want to delay loading until specific conditions are met (user authentication, form validation, etc.).
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select
+                id="country"
+                class="country-selection"
+                name="country"
+                data-name="country_delayed">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="subdivision">Subdivision:</label>
+            <select
+                id="subdivision"
+                class="subdivision-selection"
+                name="subdivision"
+                data-country="country_delayed">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button id="load-script-btn" type="button">LOAD SCRIPT</button>
+        </div>
+    </form>
+
+    <script>
+        window.CountriesDBConfig = {
+            publicKey: 'YOUR_PUBLIC_KEY',
+            autoInit: false
+        };
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>
+

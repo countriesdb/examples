@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountriesDB Widget - Custom Labels (ESM)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CountriesDB Widget - Custom Labels (ESM)</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select
+                id="country"
+                class="country-selection"
+                name="country"
+                data-name="country_label"
+                data-label="Choose your country"
+                data-preselected="">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="subdivision">State/Province:</label>
+            <select
+                id="subdivision"
+                class="subdivision-selection"
+                name="subdivision"
+                data-country="country_label"
+                data-label="Select your state/province"
+                data-preselected="">
+            </select>
+        </div>
+    </form>
+
+    <script>
+        window.CountriesDBConfig = {
+            publicKey: 'YOUR_PUBLIC_KEY'
+        };
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>
+

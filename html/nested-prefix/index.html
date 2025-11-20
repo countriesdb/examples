@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountriesDB Widget - Nested Prefix Example</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CountriesDB Widget - Nested Prefixes</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select
+                id="country"
+                class="country-selection"
+                name="country"
+                data-name="country_nested"
+                data-preselected="FR">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="subdivision">Region / Department:</label>
+            <select
+                id="subdivision"
+                class="subdivision-selection"
+                name="subdivision"
+                data-country="country_nested"
+                data-label="Select French region/department"
+                data-nested1-prefix="→ "
+                data-nested2-prefix="→→ ">
+            </select>
+        </div>
+    </form>
+
+    <script src="https://unpkg.com/@countriesdb/widget@latest/dist/index.js?public_key=YOUR_PUBLIC_KEY"></script>
+</body>
+</html>
+

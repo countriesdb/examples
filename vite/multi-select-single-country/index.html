@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CountriesDB Widget - Linked Multi-select (Vite)</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+      select {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      select[multiple] {
+        min-height: 180px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CountriesDB Widget - Single Country with Multi-select Subdivisions</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="country">Country (single select):</label>
+        <select
+          id="country"
+          class="country-selection"
+          name="country"
+          data-name="country_single"
+        ></select>
+      </div>
+
+      <div class="form-group">
+        <label for="subdivision">Subdivisions (multi-select linked to selected country):</label>
+        <select
+          id="subdivision"
+          class="subdivision-selection"
+          name="subdivision"
+          multiple
+          data-country="country_single"
+        ></select>
+      </div>
+    </form>
+
+    <script>
+      window.CountriesDBConfig = {
+        publicKey: 'YOUR_PUBLIC_KEY'
+      };
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+

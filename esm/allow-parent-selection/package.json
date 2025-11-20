@@ -1,0 +1,19 @@
+{
+  "name": "countriesdb-widget-esm-allow-parent-selection-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "npm run build && npx serve public"
+  },
+  "dependencies": {
+    "@countriesdb/widget": "latest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.24.4",
+    "serve": "^14.2.3"
+  }
+}
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountriesDB Widget - :update Event Example</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .output {
+            background: #f7f7f9;
+            border: 1px solid #e1e1e8;
+            border-radius: 6px;
+            padding: 12px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            min-height: 48px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listen to countriesWidget:update</h1>
+
+    <p>Both selects below dispatch a <code>countriesWidget:update</code> event whenever their value changes (user action, GeoIP, preselection, reload). We listen for that event to show the current selection.</p>
+
+    <form>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select
+                id="country"
+                class="country-selection"
+                data-name="country_change">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="subdivision">Subdivision:</label>
+            <select
+                id="subdivision"
+                class="subdivision-selection"
+                data-country="country_change">
+            </select>
+        </div>
+    </form>
+
+    <div class="output" id="selection-output">Waiting for selections…</div>
+
+    <script src="https://unpkg.com/@countriesdb/widget@latest/dist/index.js?public_key=YOUR_PUBLIC_KEY"></script>
+    <script>
+        var countryEl = document.querySelector('select.country-selection[data-name="country_change"]');
+        var subdivEl = document.querySelector('select.subdivision-selection[data-country="country_change"]');
+        var outEl = document.getElementById('selection-output');
+
+        function renderOutput(prefix, select) {
+            if (!select || !select.value) return prefix + '(none)';
+            var option = select.options[select.selectedIndex] || {};
+            var text = option.text || '';
+            return prefix + select.value + ' — ' + text;
+        }
+
+        function updateOutput() {
+            var countryText = renderOutput('Country: ', countryEl);
+            var subdivText = renderOutput(' | Subdivision: ', subdivEl);
+            outEl.textContent = countryText + subdivText;
+        }
+
+        function handleUpdate(event) {
+            var t = event.target;
+            if (t === countryEl) {
+                // When country updates, only update the country part
+                var countryText = renderOutput('Country: ', countryEl);
+                // Preserve subdivision text if it exists
+                var subdivText = renderOutput(' | Subdivision: ', subdivEl);
+                outEl.textContent = countryText + subdivText;
+            } else if (t === subdivEl) {
+                // When subdivision updates, update both
+                updateOutput();
+            }
+        }
+
+        if (countryEl) countryEl.addEventListener('countriesWidget:update', handleUpdate, true);
+        if (subdivEl) subdivEl.addEventListener('countriesWidget:update', handleUpdate, true);
+    </script>
+</body>
+</html>
+

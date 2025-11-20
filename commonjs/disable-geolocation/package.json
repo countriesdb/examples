@@ -1,0 +1,17 @@
+{
+  "name": "countriesdb-widget-commonjs-disable-geolocation-example",
+  "version": "1.0.0",
+  "description": "CommonJS disable geolocation example for @countriesdb/widget",
+  "scripts": {
+    "build": "browserify src/widget.js -o public/bundle.js",
+    "dev": "npm run build && npx serve public"
+  },
+  "dependencies": {
+    "@countriesdb/widget": "latest"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}
+
+
