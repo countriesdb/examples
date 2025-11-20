@@ -80,7 +80,7 @@ examples/
 ## Working locally
 
 1. `cd examples/<stack>/<scenario>`
-2. Follow the README inside that scenario. Some HTML demos require a simple `npx serve .` or environment variables before loading the page, while others can be opened directly in a browser.
+2. Follow the README inside that scenario.
 3. For `esm/`, `commonjs/`, and `vite` projects, run `npm install` and follow the `npm run ...` instructions documented in the scenario README.
 
 ## About this repository
