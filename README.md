@@ -8,7 +8,7 @@ These examples are meant to be **copy-paste friendly**, production-safe, and ful
 
 ## What's in this repository
 
-CountriesDB provides a country and state/province dropdown widget with ISO 3166-1 and ISO 3166-2 data, multilingual support, and geolocation. This repository contains working examples you can copy and run immediately - no guesswork, no outdated snippets. Each example is available in HTML (for quick testing), ESM (for modern bundlers), CommonJS (for legacy setups), and Vite (for fast development).
+CountriesDB provides a country and state/province dropdown widget with ISO 3166-1 and ISO 3166-2 data, multilingual support, and geolocation. This repository contains working examples you can copy and run immediately - no guesswork, no outdated snippets. Each example is available in HTML (for quick testing), ESM (for modern bundlers), CommonJS (for legacy setups), Vite (for fast development), and React (for React + TypeScript projects).
 
 ## Maintained stacks
 
@@ -18,6 +18,7 @@ CountriesDB provides a country and state/province dropdown widget with ISO 3166-
 | `esm/`  | You ship Rollup/ESM bundles and want explicit control over widget loading and configuration. |
 | `commonjs/` | Your front end still uses Browserify, older Webpack configs, or legacy CommonJS modules. |
 | `vite/` | You use Vite (or other modern ESM-first tooling) and want the fastest dev cycle and best DX. |
+| `react/` | You're building with React and want TypeScript-ready examples showing React patterns (hooks, state management, event handling). |
 
 Each stack mirrors the same set of example directories (e.g. `basic`, `update-select`, `name-filter`, `auto-init-delayed`) so the official docs can link to identical behaviour across toolchains.
 
@@ -73,15 +74,17 @@ examples/
 │   └── <scenario>/              # Rollup projects that emit public/bundle.js
 ├── commonjs/
 │   └── <scenario>/              # Browserify projects with src/widget.js → public/bundle.js
-└── vite/
-    └── <scenario>/              # Vite projects with src/main.js
+├── vite/
+│   └── <scenario>/              # Vite projects with src/main.js
+└── react/
+    └── <scenario>/              # React + TypeScript projects with src/App.tsx
 ```
 
 ## Working locally
 
 1. `cd examples/<stack>/<scenario>`
 2. Follow the README inside that scenario.
-3. For `esm/`, `commonjs/`, and `vite` projects, run `npm install` and follow the `npm run ...` instructions documented in the scenario README.
+3. For `esm/`, `commonjs/`, `vite`, and `react` projects, run `npm install` and follow the `npm run ...` instructions documented in the scenario README.
 
 ## Framework notes
 
@@ -91,6 +94,16 @@ Just render `<select>` elements with the correct classes and import the widget:
 ```js
 import('@countriesdb/widget')
 ```
+
+### React Examples
+
+The `react/` directory contains TypeScript-ready React examples that demonstrate:
+- Using React hooks (`useState`, `useEffect`) to manage widget state
+- Listening to `countriesWidget:update` events to sync React state
+- TypeScript type definitions for the widget API
+- Common React patterns for form integration
+
+Each React example is a standalone Vite + React + TypeScript project. See the [React examples README](./react/README.md) for a complete list of available scenarios and detailed setup instructions.
 
 
 ## About this repository
