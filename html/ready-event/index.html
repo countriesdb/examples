@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountriesDB Widget - Ready Event Example</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .output {
+            background: #f7f7f9;
+            border: 1px solid #e1e1e8;
+            border-radius: 6px;
+            padding: 12px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            min-height: 48px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listen to countriesWidget:ready</h1>
+
+    <p><code>countriesWidget:ready</code> fires separately for each select. The country select dispatches its own ready event as soon as its options are available, and each subdivision select dispatches another ready event every time it finishes loading data (initial load + every reload triggered by a country change).</p>
+
+    <form>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select
+                id="country"
+                class="country-selection"
+                data-name="country_ready">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="subdivision">Subdivision:</label>
+            <select
+                id="subdivision"
+                class="subdivision-selection"
+                data-country="country_ready">
+            </select>
+        </div>
+    </form>
+
+    <div class="output" id="ready-status">Waiting for widget…</div>
+
+    <script src="https://unpkg.com/@countriesdb/widget@latest/dist/index.js?public_key=YOUR_PUBLIC_KEY"></script>
+    <script>
+        // Ready fires separately for each select: country fires once, subdivision fires on initial load + every reload
+        var READY_EVENT = 'countriesWidget:ready';
+        var statusEl = document.getElementById('ready-status');
+        var events = [];
+
+        function formatReady(detail) {
+            var label = detail.type === 'country' ? 'Country select' : 'Subdivision select';
+            return label + ' ready (' + detail.phase + ') — current value: ' + (detail.value || '(none)');
+        }
+
+        document.addEventListener(READY_EVENT, function(event) {
+            var detail = event.detail;
+            // Filter to only our selects
+            if (detail.name !== 'country_ready' && detail.country !== 'country_ready') {
+                return;
+            }
+
+            // Add event to list (keep last 5 events)
+            events.push(formatReady(detail));
+            if (events.length > 5) {
+                events.shift();
+            }
+
+            // Show all events, each on a new line
+            statusEl.innerHTML = events.length > 0 ? events.join('<br>') : 'Waiting for widget…';
+        }, true);
+    </script>
+</body>
+</html>
+

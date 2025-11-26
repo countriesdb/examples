@@ -16,6 +16,7 @@ This directory contains React examples demonstrating various features of the Cou
 - **[multi-select-basic](./multi-select-basic/)** - Basic multi-select for countries and subdivisions
 - **[multi-select-preselected](./multi-select-preselected/)** - Multi-select with preselected values
 - **[multi-select-single-country](./multi-select-single-country/)** - Single country with multi-select subdivisions
+- **[ready-event](./ready-event/)** - Wait for `countriesWidget:ready` before wiring listeners
 - **[update-select](./update-select/)** - Listening to countriesWidget:update events
 - **[update-multiselect](./update-multiselect/)** - Listening to countriesWidget:update events with multi-select
 - **[force-language](./force-language/)** - Forcing a specific language
@@ -75,7 +76,7 @@ All React examples follow these patterns:
 
 1. **Widget Configuration**: Set `window.CountriesDBConfig` before importing the widget
 2. **Dynamic Import**: Import `@countriesdb/widget` dynamically in `useEffect`
-3. **Event Listeners**: Listen for `countriesWidget:update` events to track selections
+3. **Event Listeners**: Listen for `countriesWidget:update` events to track selections. Some scenarios (like `ready-event`) also listen for `countriesWidget:ready` to wait for the initial dataset.
 4. **State Management**: Use React state to track selected values
 5. **Data Attributes**: Use data attributes on select elements to configure the widget
 

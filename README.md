@@ -38,6 +38,7 @@ Each stack mirrors the same set of example directories (e.g. `basic`, `update-se
 **Events and updates:**
 - `update-select` - Listen to `countriesWidget:update` events (single select)
 - `update-multiselect` - Listen to `countriesWidget:update` events (multi-select)
+- `ready-event` - Wait for `countriesWidget:ready` before wiring `countriesWidget:update`
 
 **Customization:**
 - `name-filter` - Custom name filtering for countries and subdivisions
