@@ -1,0 +1,13 @@
+{
+  "name": "@countriesdb/examples-backend-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node 01-basic-country.mjs"
+  },
+  "dependencies": {
+    "@countriesdb/validator": "^0.1.4"
+  }
+}
+
