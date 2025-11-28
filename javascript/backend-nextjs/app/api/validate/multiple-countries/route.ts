@@ -11,16 +11,16 @@ const validator = new CountriesDBValidator({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { code } = body;
+    const { code: codes } = body;
 
-    if (!code || !Array.isArray(code)) {
+    if (!codes || !Array.isArray(codes)) {
       return NextResponse.json(
         { error: 'Country codes array is required' },
         { status: 400 }
       );
     }
 
-    const results = await validator.validateCountries(code);
+    const results = await validator.validateCountries(codes);
 
     const invalid = results.find(r => !r.valid);
     if (invalid) {
