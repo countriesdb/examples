@@ -37,7 +37,7 @@ return [
 
     'countriesdb' => [
         'private_key' => env('COUNTRIESDB_PRIVATE_KEY'),
-        'api_url' => 'http://localhost:8000',
+        'api_url' => 'https://api.countriesdb.com',
     ],
 
 ];
