@@ -11,8 +11,8 @@ import java.util.Map;
 
 @Component
 public class CountriesDbClient {
-    private static final String API_BASE = "http://localhost:8000";
-    private static final String API_KEY = "1|wNc6m5QoCINwDh99nWdwYMucUr6TbYM4kf755dJU031ce462";
+    private static final String API_BASE = "https://api.countriesdb.com";
+    private static final String API_KEY = "YOUR_API_KEY";
     
     private final RestClient restClient;
     private final ObjectMapper objectMapper = new ObjectMapper();
