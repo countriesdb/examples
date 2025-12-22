@@ -1,5 +1,6 @@
 package com.countriesdb.examples.httpclient;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -26,10 +27,9 @@ public final class App03 {
         System.out.println("Response: " + result);
         
         ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> data = mapper.readValue(result, Map.class);
+        Map<String, Object> data = mapper.readValue(result, new TypeReference<Map<String, Object>>() {});
         if (data.containsKey("results")) {
-            @SuppressWarnings("unchecked")
-            List<Map<String, Object>> results = (List<Map<String, Object>>) data.get("results");
+            List<Map<String, Object>> results = mapper.convertValue(data.get("results"), new TypeReference<List<Map<String, Object>>>() {});
             for (Map<String, Object> item : results) {
                 if (!Boolean.TRUE.equals(item.get("valid"))) {
                     System.err.println("❌ Some countries are invalid");

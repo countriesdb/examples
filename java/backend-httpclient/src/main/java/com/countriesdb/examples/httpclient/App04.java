@@ -1,5 +1,6 @@
 package com.countriesdb.examples.httpclient;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -25,7 +26,7 @@ public final class App04 {
         System.out.println("Response: " + result);
         
         ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> data = mapper.readValue(result, Map.class);
+        Map<String, Object> data = mapper.readValue(result, new TypeReference<Map<String, Object>>() {});
         if (!Boolean.TRUE.equals(data.get("valid"))) {
             System.err.println("❌ Subdivision validation failed");
             System.exit(1);
