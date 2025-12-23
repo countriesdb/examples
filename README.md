@@ -20,6 +20,31 @@ CountriesDB provides a country and state/province dropdown widget with ISO 3166-
 | `vite/` | You use Vite (or other modern ESM-first tooling) and want the fastest dev cycle and best DX. |
 | `react/` | You're building with React and want TypeScript-ready examples showing React patterns (hooks, state management, event handling). |
 
+### Backend stacks
+
+| Language | Examples | Clients showcased |
+| --- | --- | --- |
+| `bash/` | `backend-curl` | Bash scripts using cURL |
+| `javascript/` | `backend-fetch`, `backend-axios`, `backend-validator`, `backend-nextjs` | Node 18+ (`fetch`), axios, `@countriesdb/validator` package, Next.js API routes |
+| `python/` | `backend-requests`, `backend-urllib`, `backend-validator` | Python (requests), urllib (standard library), `countriesdb-validator` package |
+| `php/` | `backend-laravel`, `backend-guzzle`, `backend-symfony`, `backend-laravel-http` | Laravel validation rules, Laravel HTTP client, Guzzle HTTP client, Symfony HttpClient |
+| `java/` | `backend-httpclient`, `backend-spring` | Java SE HttpClient (Maven), Spring Boot REST controller + RestClient |
+| `csharp/` | `backend-httpclient`, `backend-aspnetcore` | .NET console apps using `HttpClient`, ASP.NET Core web API controllers |
+| `go/` | `backend-http`, `backend-validator` | Go `net/http` client, `validator-go` package |
+| `ruby/` | `backend-validator`, `backend-faraday`, `backend-nethttp` | Ruby gem (`countriesdb-validator`), Faraday HTTP client, Net::HTTP (standard library) |
+
+Each backend example demonstrates all 8 validation scenarios:
+1. Basic country validation
+2. Country validation with `follow_upward`
+3. Multiple country validation
+4. Basic subdivision validation
+5. Subdivision validation with `follow_related`
+6. Subdivision validation with `allow_parent_selection`
+7. Multiple subdivision validation
+8. Empty subdivision validation (for countries with no subdivisions)
+
+Most backend examples use `YOUR_API_KEY` hardcoded in the script files for simplicity. Replace `YOUR_API_KEY` with your actual API key before running the examples.
+
 Each stack mirrors the same set of example directories (e.g. `basic`, `update-select`, `name-filter`, `auto-init-delayed`) so the official docs can link to identical behaviour across toolchains.
 
 ## Available examples
@@ -79,6 +104,8 @@ examples/
 │   └── <scenario>/              # Vite projects with src/main.js
 └── react/
     └── <scenario>/              # React + TypeScript projects with src/App.tsx
+└── <language>/
+    └── backend-*/               # Backend validation examples (see table above)
 ```
 
 ## Working locally
