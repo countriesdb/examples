@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+gem 'countriesdb-validator', '~> 1.0'
+

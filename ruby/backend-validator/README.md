@@ -1,0 +1,43 @@
+## Backend Example – Ruby (`countriesdb-validator` package)
+
+Command-line examples that validate countries/subdivisions using the [`countriesdb-validator`](https://rubygems.org/gems/countriesdb-validator) gem.
+
+### Setup
+
+1. **Set your API key:** Edit any of the example files (e.g., `01-basic-country.rb`) and replace `YOUR_API_KEY` with your actual API key.
+
+2. **Install dependencies:**
+```bash
+bundle install
+```
+
+3. **Run an example:**
+```bash
+ruby 01-basic-country.rb
+ruby 02-country-follow-upward.rb
+ruby 03-multiple-countries.rb
+ruby 04-basic-subdivision.rb
+ruby 05-subdivision-follow-related.rb
+ruby 06-subdivision-allow-parent.rb
+ruby 07-multiple-subdivisions.rb
+ruby 08-empty-subdivision.rb
+```
+
+### Files
+
+- `01-basic-country.rb` – Basic country validation
+- `02-country-follow-upward.rb` – Country validation with `follow_upward`
+- `03-multiple-countries.rb` – Multiple country validation
+- `04-basic-subdivision.rb` – Basic subdivision validation
+- `05-subdivision-follow-related.rb` – Subdivision validation with `follow_related`
+- `06-subdivision-allow-parent.rb` – Subdivision validation with `allow_parent_selection`
+- `07-multiple-subdivisions.rb` – Multiple subdivision validation
+- `08-empty-subdivision.rb` – Empty subdivision validation
+- `Gemfile` – Gem dependencies
+
+### Notes
+
+- These examples use the [`countriesdb-validator`](https://rubygems.org/gems/countriesdb-validator) gem for validation.
+- Running `bundle install` will automatically download the gem from RubyGems.
+- For production use, add to your Gemfile: `gem 'countriesdb-validator'`
+
