@@ -8,6 +8,7 @@ Command-line examples that validate countries/subdivisions using the [`countries
 
 2. **Install dependencies:**
 ```bash
+bundle config set --local path 'vendor/bundle'
 bundle install
 ```
 
@@ -38,6 +39,6 @@ ruby 08-empty-subdivision.rb
 ### Notes
 
 - These examples use the [`countriesdb-validator`](https://rubygems.org/gems/countriesdb-validator) gem for validation.
-- Running `bundle install` will automatically download the gem from RubyGems.
-- For production use, add to your Gemfile: `gem 'countriesdb-validator'`
+- Running `bundle config set --local path 'vendor/bundle'` followed by `bundle install` will install the gem and its dependencies locally.
+- For production use, add `gem 'countriesdb-validator'` to your application's `Gemfile`.
 
