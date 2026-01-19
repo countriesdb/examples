@@ -32,6 +32,11 @@ This directory contains React examples demonstrating various features of the Cou
 - **[local-variant](./local-variant/)** - Preferring local variant names for subdivisions
 - **[name-filter](./name-filter/)** - Custom name filtering using callback functions
 
+## Framework Integration Examples
+
+For complete framework integration examples, see:
+- **[React Router Example](https://github.com/countriesdb/react-router-example)** - React Router v7 integration with widget reload on route navigation
+
 ## Getting Started
 
 Each example is a standalone React application. To run an example:
