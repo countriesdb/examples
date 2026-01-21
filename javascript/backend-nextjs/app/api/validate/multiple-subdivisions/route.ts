@@ -21,19 +21,11 @@ export async function POST(request: NextRequest) {
     }
 
     const results = await validator.validateSubdivisions(codes, country);
-
-    const invalid = results.find(r => !r.valid);
-    if (invalid) {
-      return NextResponse.json(
-        { error: invalid.message || 'One or more subdivision codes are invalid', valid: false },
-        { status: 422 }
-      );
-    }
-
-    return NextResponse.json({ valid: true, success: true });
-  } catch {
+    // Pass through validator response directly
+    return NextResponse.json({ results });
+  } catch (error: any) {
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: error?.message || 'Internal server error' },
       { status: 500 }
     );
   }

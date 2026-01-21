@@ -7,7 +7,7 @@
     "start": "node 01-basic-country.mjs"
   },
   "dependencies": {
-    "@countriesdb/validator": "^0.1.4"
+    "@countriesdb/validator": "^1.0.0"
   }
 }
 

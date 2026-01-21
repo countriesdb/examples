@@ -21,18 +21,10 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await validator.validateCountry(code, { followUpward: true });
-
-    if (!result.valid) {
-      return NextResponse.json(
-        { error: result.message || 'Invalid country code', valid: false },
-        { status: 422 }
-      );
-    }
-
-    return NextResponse.json({ valid: true, success: true });
-  } catch {
+    return NextResponse.json(result);
+  } catch (error: any) {
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: error?.message || 'Internal server error' },
       { status: 500 }
     );
   }
