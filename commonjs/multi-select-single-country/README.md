@@ -27,6 +27,6 @@ Edit `public/index.html`:
 
 - The country select uses `data-name="country_single"`.
 - The subdivision select uses `multiple` and `data-country="country_single"` to follow the selected country.
-- Because the subdivision select is multi-select, there is no placeholder option—users immediately see the list once a country is chosen.
+- Because the subdivision select is multi-select, there is no placeholder option; users immediately see the list once a country is chosen.
 - `src/widget.js` simply requires `@countriesdb/widget`; auto-init does the rest.
 

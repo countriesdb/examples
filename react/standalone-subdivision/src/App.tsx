@@ -39,8 +39,8 @@ function App() {
       <p>This example demonstrates standalone subdivision selects without country selection.</p>
 
       <div className="debug">
-        <p>Selected US State: {usState || '—'}</p>
-        <p>Selected Canadian Province: {caProvince || '—'}</p>
+        <p>Selected US State: {usState || '(none)'}</p>
+        <p>Selected Canadian Province: {caProvince || '(none)'}</p>
       </div>
 
       <div className="form-group">

@@ -47,8 +47,8 @@ function App() {
       <p>This example disables automatic initialization and loads the widget manually.</p>
 
       <div className="debug">
-        <p>Selected country: {country || '—'}</p>
-        <p>Selected subdivision: {subdivision || '—'}</p>
+        <p>Selected country: {country || '(none)'}</p>
+        <p>Selected subdivision: {subdivision || '(none)'}</p>
       </div>
 
       <div className="form-group">

@@ -28,5 +28,5 @@ Edit `public/index.html`:
 
 - `src/widget.js` simply requires `@countriesdb/widget`; Browserify emits `public/bundle.js`.
 - Because `forcedLanguage` is set in the global config, every select initialized by the widget renders in Spanish.
-- The HTML form is identical to the basic example—only the configuration changes.
+- The HTML form is identical to the basic example; only the configuration changes.
 

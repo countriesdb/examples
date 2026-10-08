@@ -38,8 +38,8 @@ function App() {
       <p>This example demonstrates multi-select for countries and subdivisions.</p>
 
       <div className="debug">
-        <p>Selected countries: {selectedCountries.length > 0 ? selectedCountries.join(', ') : '—'}</p>
-        <p>Selected subdivisions: {selectedSubdivisions.length > 0 ? selectedSubdivisions.join(', ') : '—'}</p>
+        <p>Selected countries: {selectedCountries.length > 0 ? selectedCountries.join(', ') : '(none)'}</p>
+        <p>Selected subdivisions: {selectedSubdivisions.length > 0 ? selectedSubdivisions.join(', ') : '(none)'}</p>
       </div>
 
       <div className="form-group">

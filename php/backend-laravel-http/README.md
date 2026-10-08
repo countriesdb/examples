@@ -16,16 +16,16 @@ This is a full Laravel application demonstrating how to use Laravel's `Http` fac
 All endpoints accept POST requests with JSON payloads:
 
 **Country Validation:**
-- `/api/validate/country/basic` — `{ "code": "US" }`
-- `/api/validate/country/follow-upward` — `{ "code": "GF" }`
-- `/api/validate/country/multiple` — `{ "codes": ["US", "CA", "MX", "FR"] }`
+- `/api/validate/country/basic` - `{ "code": "US" }`
+- `/api/validate/country/follow-upward` - `{ "code": "GF" }`
+- `/api/validate/country/multiple` - `{ "codes": ["US", "CA", "MX", "FR"] }`
 
 **Subdivision Validation:**
-- `/api/validate/subdivision/basic` — `{ "country": "US", "code": "US-CA" }`
-- `/api/validate/subdivision/follow-related` — `{ "country": "FR", "code": "FR-40" }`
-- `/api/validate/subdivision/allow-parent` — `{ "country": "FR", "code": "FR-ARA" }`
-- `/api/validate/subdivision/multiple` — `{ "country": "US", "codes": ["US-CA", "US-NY", "US-TX"] }`
-- `/api/validate/subdivision/empty` — `{ "country": "AQ" }`
+- `/api/validate/subdivision/basic` - `{ "country": "US", "code": "US-CA" }`
+- `/api/validate/subdivision/follow-related` - `{ "country": "FR", "code": "FR-40" }`
+- `/api/validate/subdivision/allow-parent` - `{ "country": "FR", "code": "FR-ARA" }`
+- `/api/validate/subdivision/multiple` - `{ "country": "US", "codes": ["US-CA", "US-NY", "US-TX"] }`
+- `/api/validate/subdivision/empty` - `{ "country": "AQ" }`
 
 ### Testing
 

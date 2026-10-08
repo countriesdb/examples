@@ -12,7 +12,7 @@ function renderOutput(prefix, select) {
 
   const option = select.options[select.selectedIndex] || {};
   const label = option.textContent || option.text || '';
-  return `${prefix}${select.value} — ${label}`;
+  return `${prefix}${select.value} - ${label}`;
 }
 
 function updateOutput(countrySelect, subdivisionSelect, outputEl) {

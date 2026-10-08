@@ -16,7 +16,7 @@ function updateStatus() {
 
 function formatReady(detail) {
   const label = detail.type === 'country' ? 'Country select' : 'Subdivision select';
-  return `${label} ready (${detail.phase}) — current value: ${detail.value || '(none)'}`;
+  return `${label} ready (${detail.phase}) - current value: ${detail.value || '(none)'}`;
 }
 
 document.addEventListener(

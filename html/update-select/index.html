@@ -74,7 +74,7 @@
             if (!select || !select.value) return prefix + '(none)';
             var option = select.options[select.selectedIndex] || {};
             var text = option.text || '';
-            return prefix + select.value + ' — ' + text;
+            return prefix + select.value + ' - ' + text;
         }
 
         function updateOutput() {

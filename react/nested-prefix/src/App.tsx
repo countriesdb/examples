@@ -38,8 +38,8 @@ function App() {
       <p>This example demonstrates nested prefixes for hierarchical subdivisions.</p>
 
       <div className="debug">
-        <p>Selected country: {selectedCountry || '—'}</p>
-        <p>Selected subdivision: {selectedSubdivision || '—'}</p>
+        <p>Selected country: {selectedCountry || '(none)'}</p>
+        <p>Selected subdivision: {selectedSubdivision || '(none)'}</p>
       </div>
 
       <div className="form-group">

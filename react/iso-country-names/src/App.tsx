@@ -39,8 +39,8 @@ function App() {
       <p>This example shows ISO short names for countries (e.g., "United States of America").</p>
 
       <div className="debug">
-        <p>Selected country: {selectedCountry || '—'}</p>
-        <p>Selected subdivision: {selectedSubdivision || '—'}</p>
+        <p>Selected country: {selectedCountry || '(none)'}</p>
+        <p>Selected subdivision: {selectedSubdivision || '(none)'}</p>
       </div>
 
       <div className="form-group">

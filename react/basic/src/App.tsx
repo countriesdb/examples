@@ -39,7 +39,7 @@ function App() {
       <p>This example keeps React state in sync and logs all updates to the console.</p>
 
       <div className="debug">
-        <p>Selected country: {selectedCountry || '—'}</p>
+        <p>Selected country: {selectedCountry || '(none)'}</p>
       </div>
 
       <div className="form-group">

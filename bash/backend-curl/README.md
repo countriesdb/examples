@@ -1,6 +1,6 @@
 # Backend Example – Bash (cURL)
 
-This example shows how to call the CountriesDB validation API from bash using `curl`.
+This example shows how to call the CountriesDB **validation** API and **data listings** API from bash using `curl`.
 
 ## Prerequisites
 
@@ -25,7 +25,9 @@ This example shows how to call the CountriesDB validation API from bash using `c
 
 ## Examples
 
-This directory contains 8 example scripts demonstrating all validation scenarios:
+This directory contains example scripts for validation and for server-side data listing:
+
+**Validation (POST /api/validate/...)**
 
 1. **01-basic-country.sh** - Basic country validation (single country, no options)
 2. **02-country-follow-upward.sh** - Country validation with `follow_upward` option
@@ -35,6 +37,11 @@ This directory contains 8 example scripts demonstrating all validation scenarios
 6. **06-subdivision-allow-parent.sh** - Subdivision validation with `allow_parent_selection` option
 7. **07-multiple-subdivisions.sh** - Multiple subdivision validation
 8. **08-empty-subdivision.sh** - Empty subdivision validation (for countries with no subdivisions)
+
+**Data listings (GET /api/data/..., same private Bearer key as validation)**
+
+9. **09-data-countries.sh** - List countries (`GET /api/data/countries`)
+10. **10-data-subdivisions.sh** - List subdivisions for a country; optional ISO argument, default `US` (`GET /api/data/countries/{country}/subdivisions`)
 
 ## Configuration
 

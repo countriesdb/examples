@@ -39,8 +39,8 @@ function App() {
       <p>This example demonstrates single country selection with multi-select subdivisions.</p>
 
       <div className="debug">
-        <p>Selected country: {country || '—'}</p>
-        <p>Selected subdivisions: {selectedSubdivisions.length > 0 ? selectedSubdivisions.join(', ') : '—'}</p>
+        <p>Selected country: {country || '(none)'}</p>
+        <p>Selected subdivisions: {selectedSubdivisions.length > 0 ? selectedSubdivisions.join(', ') : '(none)'}</p>
       </div>
 
       <div className="form-group">

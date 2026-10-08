@@ -21,7 +21,7 @@ function App() {
       if (!select || !select.value) return prefix + '(none)'
       const option = select.options[select.selectedIndex] || {}
       const text = option.text || ''
-      return prefix + select.value + ' — ' + text
+      return prefix + select.value + ' - ' + text
     }
 
     const updateOutput = () => {
